@@ -1,0 +1,137 @@
+
+:host {
+  position: relative;
+  display: inline-block;
+
+  --height: 40px;
+  --text-margin-start: 0;
+  --text-margin-end: 12px;
+  --font-family: Helvetica, Arial, sans-serif;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --logo-margin-start: 10px;
+  --logo-margin-end: 8px;
+}
+:host([size="large"]) {
+  --height: 40px;
+  --text-margin-start: 0;
+  --text-margin-end: 12px;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --logo-margin-start: 10px;
+  --logo-margin-end: 8px;
+}
+:host([size="medium"]) {
+  --height: 28px;
+  --text-margin-end: 7px;
+  --font-size: 13px;
+  --border-radius: 3px;
+  --logo-margin-start: 7px;
+  --logo-margin-end: 6px;
+}
+:host([size="small"]) {
+  --height: 20px;
+  --text-margin-end: 9px;
+  --font-size: 11px;
+  --border-radius: 3px;
+  --logo-margin-start: 7px;
+  --logo-margin-end: 5px;
+}
+
+:host([expand="block"]) {
+  display: block;
+}
+
+
+/* BUTTON */
+
+button {
+  align-items: center;
+  background-color: #1877f2;
+  border-radius: var(--border-radius);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: 700;
+  height: var(--height);
+  letter-spacing: .25px;
+  overflow: hidden;
+  padding: 0;
+  text-align: inherit;
+  text-transform: inherit;
+  width: 100%;
+}
+
+button:active:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(9, 30, 66);
+  opacity: 0.3;
+}
+
+
+/* SVG */
+
+facebook-icon {
+  width: calc(var(--height) * 0.65);
+  height: calc(var(--height) * 0.65);
+  margin-left: var(--logo-margin-start, calc(var(--height) * 0.25));
+  margin-right: var(--logo-margin-end, calc(var(--height) * 0.20));
+}
+:host-context([dir="rtl"]) facebook-icon {
+  margin-left: var(--logo-margin-end, calc(var(--height) * 0.20));
+  margin-right: var(--logo-margin-start, calc(var(--height) * 0.25));
+}
+
+:host([size="medium"]) facebook-icon {
+  width: 18px;
+  height: 18px;
+}
+
+:host([size="small"]) facebook-icon {
+  width: 14px;
+  height: 14px;
+}
+
+
+/* TEXT */
+
+span {
+  flex-grow: 1;
+  margin-left: var(--text-margin-start);
+  margin-right: var(--text-margin-end);
+}
+:host-context([dir="rtl"]) span {
+  margin-left: var(--text-margin-end);
+  margin-right: var(--text-margin-start);
+}
+
+
+/* PICTURE */
+
+::slotted([slot="picture"]) {
+  height: 40px;
+  width: 40px;
+}
+
+:host([size="medium"]) ::slotted([slot="picture"]) {
+  height: 28px;
+  width: 28px;
+  margin-left: 5px;
+}
+:host-context([dir="rtl"]):host([size="medium"]) ::slotted([slot="picture"]) {
+  margin-left: unset;
+  margin-right: 5px;
+}
+
+:host([size="small"]) ::slotted([slot="picture"]) {
+  height: 20px;
+  width: 20px;
+}

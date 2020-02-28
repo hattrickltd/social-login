@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/social-login.esm.js"></script>
+  <script nomodule src="/build/social-login.js"></script>
+
+</head>
+<body>
+
+  <!-- <script>console.log(document.fonts.check("1em Roboto"));</script> -->
+
+  <style>
+    facebook-login-button {
+      /* width: 400px;
+      text-align: center; */
+    }
+  </style>
+
+  <facebook-login-button client-id="221515954547881">
+    Log In With Facebook
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button size="large" client-id="221515954547881">
+    Continue as Marcus
+    <img slot="picture" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t31.0-1/cp0/c19.0.50.50a/p50x50/10258164_10152392609634434_9061744709426705222_o.jpg?_nc_cat=106&amp;_nc_ohc=OSP3hvjepzgAX89QTqJ&amp;_nc_ht=scontent-ssn1-1.xx&amp;oh=fdb3006bb6577ec0fc02ae31b45f1da3&amp;oe=5ECE2B30" alt="" aria-label="Marcus Bodin">
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button size="medium" client-id="221515954547881">
+    Log In With Facebook
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button size="medium" client-id="221515954547881">
+    Continue as Marcus
+    <img slot="picture" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t31.0-1/cp0/c19.0.50.50a/p50x50/10258164_10152392609634434_9061744709426705222_o.jpg?_nc_cat=106&amp;_nc_ohc=OSP3hvjepzgAX89QTqJ&amp;_nc_ht=scontent-ssn1-1.xx&amp;oh=fdb3006bb6577ec0fc02ae31b45f1da3&amp;oe=5ECE2B30" alt="" aria-label="Marcus Bodin">
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button size="small" client-id="221515954547881">
+    Log In
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button size="small" client-id="221515954547881" type="continue_with">
+    Continue as Marcus
+    <img slot="picture" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t31.0-1/cp0/c19.0.50.50a/p50x50/10258164_10152392609634434_9061744709426705222_o.jpg?_nc_cat=106&amp;_nc_ohc=OSP3hvjepzgAX89QTqJ&amp;_nc_ht=scontent-ssn1-1.xx&amp;oh=fdb3006bb6577ec0fc02ae31b45f1da3&amp;oe=5ECE2B30" alt="" aria-label="Marcus Bodin">
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <facebook-login-button style="--height: 50px; --text-margin-end: 44px; width: 400px; text-align: center;" client-id="221515954547881" type="continue_with">
+    Log In With Facebook
+  </facebook-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button theme="light" client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button disabled client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button size="medium" client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button size="small" client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <br/>
+  <br/>
+
+  <google-login-button style="--height: 50px; width: 400px; text-align: center;" client-id="382191438385-t5optar5n696lik8be68b2okti5h7bf5.apps.googleusercontent.com">
+    Sign in with Google
+  </google-login-button>
+
+  <script>
+    document.querySelectorAll("facebook-login-button, facebook-login-wrapper").forEach(function(el) {
+      el.addEventListener("facebookError", function(err) { console.error(err); });
+    });
+    document.querySelectorAll("google-login-button, google-login-wrapper").forEach(function(el) {
+      el.addEventListener("googleError", function(err) { console.error(err); });
+    });
+  </script>
+  
+</body>
+</html>

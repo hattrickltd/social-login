@@ -1,0 +1,12 @@
+:host {
+  display: inline-block;
+}
+
+svg {
+  display: block;
+}
+
+:host-context([disabled]) path,
+:host([disabled]) path {
+  fill: #8D8D8D;
+}
