@@ -37,8 +37,6 @@ export class FacebookProvider {
     });
   }
 
-  async login(fields?: string, scope?: string);
-  async login(fields?: string, options?: any);
   async login(
     fields: string = "name,email,picture,first_name,last_name",
     options: string | any = {},
