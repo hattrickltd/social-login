@@ -12,10 +12,10 @@
 | `checkStatus` | `check-status` |                                              | `boolean`                        | `false`           |
 | `clientId`    | `client-id`    |                                              | `string`                         | `undefined`       |
 | `disabled`    | `disabled`     |                                              | `boolean`                        | `false`           |
-| `expand`      | `expand`       |                                              | `"" or "block"`                  | `""`              |
+| `expand`      | `expand`       |                                              | `"" \| "block"`                  | `""`              |
 | `loadFont`    | `load-font`    |                                              | `boolean`                        | `true`            |
 | `scope`       | `scope`        | Space-separated string of scopes to request. | `string`                         | `"profile email"` |
-| `size`        | `size`         |                                              | `"large" or "medium" or "small"` | `"large"`         |
+| `size`        | `size`         |                                              | `"large" \| "medium" \| "small"` | `"large"`         |
 
 
 ## Events

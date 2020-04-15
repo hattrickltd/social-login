@@ -37,12 +37,15 @@ export class FacebookProvider {
     });
   }
 
+  async login(fields?: string, scope?: string);
+  async login(fields?: string, options?: any);
   async login(
     fields: string = "name,email,picture,first_name,last_name",
-    scope: string = "email,public_profile",
-    options: any = {},
+    options: string | any = {},
   ): Promise<ISocialUser> {
     await FacebookProvider._loadScriptPromise;
+
+    if (!options.scope) options.scope = "email,public_profile";
 
     return new Promise((resolve, reject) => {
       FB.login((response: any) => {
@@ -52,7 +55,7 @@ export class FacebookProvider {
         } else {
           reject(new Error("User cancelled login or did not fully authorize."));
         }
-      }, { ...options, scope });
+      }, { ...options });
     });
   }
 

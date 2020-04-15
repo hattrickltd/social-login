@@ -10,6 +10,10 @@ export namespace Components {
     interface FacebookIcon {
     }
     interface FacebookLoginButton {
+        /**
+          * Comma-separated string of `auth_type`s, e.g. `rerequest`, `reauthenticate` or `reauthorize` See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "authType": string;
         "clientId": string;
         "disabled": boolean;
         "expand": "" | "block";
@@ -22,7 +26,11 @@ export namespace Components {
          */
         "locale": string;
         /**
-          * Comma-separated string of scopes to request.
+          * Additional Facebook Login options. See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "options": any;
+        /**
+          * Comma-separated string of scopes to request. See https://developers.facebook.com/docs/facebook-login/permissions
          */
         "scope": string;
         "size": "large" | "medium" | "small";
@@ -36,6 +44,10 @@ export namespace Components {
         "version": string;
     }
     interface FacebookLoginWrapper {
+        /**
+          * Comma-separated string of `auth_type`s, e.g. `rerequest`, `reauthenticate` or `reauthorize` See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "authType": string;
         "clientId": string;
         "expand": "" | "block";
         /**
@@ -47,7 +59,11 @@ export namespace Components {
          */
         "locale": string;
         /**
-          * Comma-separated string of scopes to request.
+          * Additional Facebook Login options. See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "options": any;
+        /**
+          * Comma-separated string of scopes to request. See https://developers.facebook.com/docs/facebook-login/permissions
          */
         "scope": string;
         /**
@@ -133,6 +149,10 @@ declare namespace LocalJSX {
     interface FacebookIcon {
     }
     interface FacebookLoginButton {
+        /**
+          * Comma-separated string of `auth_type`s, e.g. `rerequest`, `reauthenticate` or `reauthorize` See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "authType"?: string;
         "clientId"?: string;
         "disabled"?: boolean;
         "expand"?: "" | "block";
@@ -148,7 +168,11 @@ declare namespace LocalJSX {
         "onFacebookLogin"?: (event: CustomEvent<ISocialUser>) => void;
         "onFacebookStatus"?: (event: CustomEvent<ISocialUser>) => void;
         /**
-          * Comma-separated string of scopes to request.
+          * Additional Facebook Login options. See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "options"?: any;
+        /**
+          * Comma-separated string of scopes to request. See https://developers.facebook.com/docs/facebook-login/permissions
          */
         "scope"?: string;
         "size"?: "large" | "medium" | "small";
@@ -162,6 +186,10 @@ declare namespace LocalJSX {
         "version"?: string;
     }
     interface FacebookLoginWrapper {
+        /**
+          * Comma-separated string of `auth_type`s, e.g. `rerequest`, `reauthenticate` or `reauthorize` See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "authType"?: string;
         "clientId"?: string;
         "expand"?: "" | "block";
         /**
@@ -176,7 +204,11 @@ declare namespace LocalJSX {
         "onFacebookLogin"?: (event: CustomEvent<ISocialUser>) => void;
         "onFacebookStatus"?: (event: CustomEvent<ISocialUser>) => void;
         /**
-          * Comma-separated string of scopes to request.
+          * Additional Facebook Login options. See https://developers.facebook.com/docs/reference/javascript/FB.login#options
+         */
+        "options"?: any;
+        /**
+          * Comma-separated string of scopes to request. See https://developers.facebook.com/docs/facebook-login/permissions
          */
         "scope"?: string;
         /**

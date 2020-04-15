@@ -31,8 +31,14 @@ export class FacebookLoginButton {
   /** Comma-separated string of fields to fetch. */
   @Prop() fields: string;
 
-  /** Comma-separated string of scopes to request. */
+  /** Comma-separated string of scopes to request. See https://developers.facebook.com/docs/facebook-login/permissions */
   @Prop() scope: string;
+
+  /** Comma-separated string of `auth_type`s, e.g. `rerequest`, `reauthenticate` or `reauthorize` See https://developers.facebook.com/docs/reference/javascript/FB.login#options */
+  @Prop() authType: string = "";
+
+  /** Additional Facebook Login options. See https://developers.facebook.com/docs/reference/javascript/FB.login#options */
+  @Prop() options: any = {};
 
   /** When `continue_with` is chosen the status will automatically be checked and the `facebookStatus` event will trigger if a user is found. */
   @Prop() type: "login_with" | "continue_with" = "login_with";
@@ -63,7 +69,7 @@ export class FacebookLoginButton {
   private async login() {
     await this.isReady;
 
-    await this.provider.login(this.fields, this.scope).then((user) => {
+    await this.provider.login(this.fields, { ...this.options, scope: this.scope, auth_type: this.authType }).then((user) => {
       this.facebookLogin.emit(user);
     }).catch((err) => {
       this.facebookError.emit(err);

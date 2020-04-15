@@ -11,7 +11,7 @@
 | ------------- | -------------- | -------------------------------------------- | --------------- | ----------------- |
 | `checkStatus` | `check-status` |                                              | `boolean`       | `false`           |
 | `clientId`    | `client-id`    |                                              | `string`        | `undefined`       |
-| `expand`      | `expand`       |                                              | `"" or "block"` | `""`              |
+| `expand`      | `expand`       |                                              | `"" \| "block"` | `""`              |
 | `scope`       | `scope`        | Space-separated string of scopes to request. | `string`        | `"profile email"` |
 
 
