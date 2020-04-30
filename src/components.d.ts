@@ -7,6 +7,54 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ISocialUser, } from "./utils/interfaces";
 export namespace Components {
+    interface AppleIcon {
+    }
+    interface AppleLoginButton {
+        "border": boolean;
+        "clientId": string;
+        "disabled": boolean;
+        "expand": "" | "block";
+        /**
+          * Which Apple locale the user will see.
+         */
+        "locale": string;
+        /**
+          * Required if `usePopup === true`. Apple processes the authorization request, an HTTP POST request containing the results of the authorization is sent to the URL provided
+         */
+        "redirectURI": string;
+        /**
+          * Space-separated string of scopes to request. See https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple
+         */
+        "scopes": string;
+        "size": "large" | "medium" | "small";
+        /**
+          * When `continue_with` is chosen the status will automatically be checked and the `facebookStatus` event will trigger if a user is found.
+         */
+        "type": "sign in" | "continue";
+        /**
+          * If the login should be shown as a popup
+         */
+        "usePopup": boolean;
+    }
+    interface AppleLoginWrapper {
+        "clientId": string;
+        /**
+          * Which Apple locale the user will see.
+         */
+        "locale": string;
+        /**
+          * Required if `usePopup === true`. Apple processes the authorization request, an HTTP POST request containing the results of the authorization is sent to the URL provided
+         */
+        "redirectURI": string;
+        /**
+          * Space-separated string of scopes to request. See https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple
+         */
+        "scopes": string;
+        /**
+          * If the login should be shown as a popup
+         */
+        "usePopup": boolean;
+    }
     interface FacebookIcon {
     }
     interface FacebookLoginButton {
@@ -100,6 +148,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppleIconElement extends Components.AppleIcon, HTMLStencilElement {
+    }
+    var HTMLAppleIconElement: {
+        prototype: HTMLAppleIconElement;
+        new (): HTMLAppleIconElement;
+    };
+    interface HTMLAppleLoginButtonElement extends Components.AppleLoginButton, HTMLStencilElement {
+    }
+    var HTMLAppleLoginButtonElement: {
+        prototype: HTMLAppleLoginButtonElement;
+        new (): HTMLAppleLoginButtonElement;
+    };
+    interface HTMLAppleLoginWrapperElement extends Components.AppleLoginWrapper, HTMLStencilElement {
+    }
+    var HTMLAppleLoginWrapperElement: {
+        prototype: HTMLAppleLoginWrapperElement;
+        new (): HTMLAppleLoginWrapperElement;
+    };
     interface HTMLFacebookIconElement extends Components.FacebookIcon, HTMLStencilElement {
     }
     var HTMLFacebookIconElement: {
@@ -137,6 +203,9 @@ declare global {
         new (): HTMLGoogleLoginWrapperElement;
     };
     interface HTMLElementTagNameMap {
+        "apple-icon": HTMLAppleIconElement;
+        "apple-login-button": HTMLAppleLoginButtonElement;
+        "apple-login-wrapper": HTMLAppleLoginWrapperElement;
         "facebook-icon": HTMLFacebookIconElement;
         "facebook-login-button": HTMLFacebookLoginButtonElement;
         "facebook-login-wrapper": HTMLFacebookLoginWrapperElement;
@@ -146,6 +215,58 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppleIcon {
+    }
+    interface AppleLoginButton {
+        "border"?: boolean;
+        "clientId"?: string;
+        "disabled"?: boolean;
+        "expand"?: "" | "block";
+        /**
+          * Which Apple locale the user will see.
+         */
+        "locale"?: string;
+        "onAppleError"?: (event: CustomEvent<Error>) => void;
+        "onAppleLogin"?: (event: CustomEvent<ISocialUser>) => void;
+        /**
+          * Required if `usePopup === true`. Apple processes the authorization request, an HTTP POST request containing the results of the authorization is sent to the URL provided
+         */
+        "redirectURI"?: string;
+        /**
+          * Space-separated string of scopes to request. See https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple
+         */
+        "scopes"?: string;
+        "size"?: "large" | "medium" | "small";
+        /**
+          * When `continue_with` is chosen the status will automatically be checked and the `facebookStatus` event will trigger if a user is found.
+         */
+        "type"?: "sign in" | "continue";
+        /**
+          * If the login should be shown as a popup
+         */
+        "usePopup"?: boolean;
+    }
+    interface AppleLoginWrapper {
+        "clientId"?: string;
+        /**
+          * Which Apple locale the user will see.
+         */
+        "locale"?: string;
+        "onAppleError"?: (event: CustomEvent<Error>) => void;
+        "onAppleLogin"?: (event: CustomEvent<ISocialUser>) => void;
+        /**
+          * Required if `usePopup === true`. Apple processes the authorization request, an HTTP POST request containing the results of the authorization is sent to the URL provided
+         */
+        "redirectURI"?: string;
+        /**
+          * Space-separated string of scopes to request. See https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple
+         */
+        "scopes"?: string;
+        /**
+          * If the login should be shown as a popup
+         */
+        "usePopup"?: boolean;
+    }
     interface FacebookIcon {
     }
     interface FacebookLoginButton {
@@ -250,6 +371,9 @@ declare namespace LocalJSX {
         "scope"?: string;
     }
     interface IntrinsicElements {
+        "apple-icon": AppleIcon;
+        "apple-login-button": AppleLoginButton;
+        "apple-login-wrapper": AppleLoginWrapper;
         "facebook-icon": FacebookIcon;
         "facebook-login-button": FacebookLoginButton;
         "facebook-login-wrapper": FacebookLoginWrapper;
@@ -262,6 +386,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "apple-icon": LocalJSX.AppleIcon & JSXBase.HTMLAttributes<HTMLAppleIconElement>;
+            "apple-login-button": LocalJSX.AppleLoginButton & JSXBase.HTMLAttributes<HTMLAppleLoginButtonElement>;
+            "apple-login-wrapper": LocalJSX.AppleLoginWrapper & JSXBase.HTMLAttributes<HTMLAppleLoginWrapperElement>;
             "facebook-icon": LocalJSX.FacebookIcon & JSXBase.HTMLAttributes<HTMLFacebookIconElement>;
             "facebook-login-button": LocalJSX.FacebookLoginButton & JSXBase.HTMLAttributes<HTMLFacebookLoginButtonElement>;
             "facebook-login-wrapper": LocalJSX.FacebookLoginWrapper & JSXBase.HTMLAttributes<HTMLFacebookLoginWrapperElement>;

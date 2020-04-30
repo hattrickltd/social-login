@@ -21,10 +21,27 @@ export interface ISocialUser {
    */
   facebook?: any;
 
-  /**
-   * Contains the entire object returned from the Linked In API based on the fields you requested.
-   * Only available for the Linked In provider.
-   * Refer to the Linked In docs: https://developer.linkedin.com/docs/fields
-   */
-  linkedIn?: any;
+  apple?: IAppleLoginResponse;
+
+  // /**
+  //  * Contains the entire object returned from the Linked In API based on the fields you requested.
+  //  * Only available for the Linked In provider.
+  //  * Refer to the Linked In docs: https://developer.linkedin.com/docs/fields
+  //  */
+  // linkedIn?: any;
+}
+
+export interface IAppleLoginResponse {
+  authorization: {
+    state: string;
+    code: string;
+    id_token: string;
+  },
+  user: {
+    email: string,
+    name: {
+      firstName: string;
+      lastName: string;
+    }
+  }
 }

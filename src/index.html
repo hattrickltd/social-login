@@ -111,13 +111,64 @@
     Sign in with Google
   </google-login-button>
 
+  <br/>
+  <br/>
+
+  <apple-login-button client-id="org.hattrick.Hattrick" locale="en_US" color="black" use-popup="true" style="width: 210px">
+    Sign in with Apple
+  </apple-login-button>
+<!-- 
+  <br/>
+  <br/>
+
+  <apple-login-wrapper client-id="org.hattrick.Hattrick" locale="en_US">
+    <div style="width: 210px; height: 40px;" id="appleid-signin" class="signin-button" data-color="black" data-border="false" data-type="sign in"></div>
+  </apple-login-wrapper> -->
+
+  <br/>
+  <br/>
+
+  <apple-login-button client-id="org.hattrick.Hattrick" locale="en_US" color="white" border="true" style="width: 210px">
+    Sign in with Apple
+  </apple-login-button>
+<!-- 
+  <br/>
+  <br/>
+
+  <apple-login-wrapper client-id="org.hattrick.Hattrick" locale="en_US">
+    <div style="width: 210px; height: 40px;" id="appleid-signin" class="signin-button" data-color="white" data-border="true" data-type="sign in"></div>
+  </apple-login-wrapper> -->
+
+  <br/>
+  <br/>
+
+  <div style="display: inline-block; padding: 10px; background-color: black">
+    <apple-login-button client-id="org.hattrick.Hattrick" locale="en_US" color="white" style="width: 210px">
+      Sign in with Apple
+    </apple-login-button>
+<!--   
+    <br/>
+    <br/>
+  
+    <apple-login-wrapper client-id="org.hattrick.Hattrick" locale="en_US">
+      <div style="width: 210px; height: 40px;" id="appleid-signin" class="signin-button" data-color="white" data-border="false" data-type="sign in"></div>
+    </apple-login-wrapper> -->
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
   <script>
-    document.querySelectorAll("facebook-login-button, facebook-login-wrapper").forEach(function(el) {
-      el.addEventListener("facebookError", function(err) { console.error(err); });
-    });
-    document.querySelectorAll("google-login-button, google-login-wrapper").forEach(function(el) {
-      el.addEventListener("googleError", function(err) { console.error(err); });
-    });
+    //document.querySelectorAll("facebook-login-button, facebook-login-wrapper").forEach(function(el) {
+    //  el.addEventListener("facebookError", function(err) { console.error(err); });
+    //});
+    //document.querySelectorAll("google-login-button, google-login-wrapper").forEach(function(el) {
+    //  el.addEventListener("googleError", function(err) { console.error(err); });
+    //});
   </script>
   
 </body>

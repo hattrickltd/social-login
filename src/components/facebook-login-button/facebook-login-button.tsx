@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host, Event, EventEmitter, Element } from "@stencil/core";
+import { Component, Prop, h, Host, Event, EventEmitter } from "@stencil/core";
 import { FacebookProvider } from "../../utils/facebook-provider";
 import { ISocialUser } from "../../utils/interfaces";
 
@@ -13,8 +13,6 @@ import { ISocialUser } from "../../utils/interfaces";
   shadow: true,
 })
 export class FacebookLoginButton {
-
-  @Element() host: HTMLFacebookLoginButtonElement;
 
   @Prop() clientId: string;
 

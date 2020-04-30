@@ -1,5 +1,6 @@
 :host {
   display: inline-block;
+  min-width: 140px;
 
   --height: 40px;
   --font-size: 13px;
@@ -8,7 +9,7 @@
 }
 :host([size="large"]) {
   --height: 40px;
-  --font-size: 13px;
+  --font-size: 16px;
 }
 :host([size="medium"]) {
   --height: 28px;
@@ -26,9 +27,6 @@
 button {
   align-items: center;
   border-radius: 2px;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
   background-color: #4285F4;
   border: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
@@ -42,6 +40,7 @@ button {
   height: var(--height);
   max-height: 100%;
   outline: 0;
+  overflow: hidden;
   padding: 1px;
   text-align: inherit;
   text-transform: inherit;
